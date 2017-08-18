@@ -52,7 +52,7 @@ namespace ControladorPedidos
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-           // CarregarLista();
+            CarregarLista();
         }
 
         private void btAtualizar_Click(object sender, RoutedEventArgs e)
@@ -68,6 +68,7 @@ namespace ControladorPedidos
         {
             formCadastroProdutos formCadastro = new formCadastroProdutos();
             formCadastro.ShowDialog();
+            CarregarLista();
         }
 
         private void btExcluir_Click(object sender, RoutedEventArgs e)
@@ -80,7 +81,7 @@ namespace ControladorPedidos
             {
                 if (MessageBox.Show("Tem certeza que deseja excluir o item selecionado?", "Atencao", MessageBoxButton.YesNo, MessageBoxImage.Question).Equals(MessageBoxResult.Yes)) {
                     var produto = (Produto)listProdutos.SelectedItem;
-                  //  repositorio.Excluir(produto);
+                    repositorio.Excluir(produto);
                 }
             }
         }
