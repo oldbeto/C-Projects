@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace ren.Comercio.Model
 {
-    public class Produto
-    {
-        [Key]
-        public int codigo { get; set; }
-
+    public class Produto : ClasseGenerica
+   
         public string nome { get; set; }
 
         public decimal valorCompra { get; set; }

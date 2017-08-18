@@ -22,53 +22,39 @@ namespace ControladorPedidos
     public partial class formCadastroProdutos : Window
     {
 
-        Produto produto = new Produto();
-        RepositorioPadrao repo;
+        RepositorioProduto repo;
 
         public formCadastroProdutos()
         {
             InitializeComponent();
-            repo = new RepositorioPadrao();
+            repo = new RepositorioProduto();
+            this.DataContext = new Produto();
         }
 
         public formCadastroProdutos(Produto produto)
         {
             InitializeComponent();
-            repo = new RepositorioPadrao();
+            repo = new RepositorioProduto();
 
-            lbCodigo.Content = produto.codigo.ToString();
-            txtNome.Text = produto.nome;
-            txtQtdEstoque.Text = produto.qtdEstoque.ToString();
-            txtQtdMinimaEstoque.Text = produto.qtdMinimaEstoque.ToString();
-            txtValorCompra.Text = produto.valorCompra.ToString();
-            txtValorVenda.Text = produto.valorVenda.ToString();
-            //marca
 
         }
 
         private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
 
+            var produto = (Produto)this.DataContext;
+
+            produto.marca = (Marca)cbMarca.SelectedItem;
+
             if(lbCodigo.Content == null)
             {
                 // novo
-                produto.nome = txtNome.Text;
-                produto.valorCompra = Convert.ToDecimal(txtValorCompra.Text);
-                produto.valorVenda = Convert.ToDecimal(txtValorVenda.Text);
-                produto.qtdEstoque = Int32.Parse(txtQtdEstoque.Text);
-                produto.qtdMinimaEstoque = Int32.Parse(txtQtdMinimaEstoque.Text);
-                produto.marca = (Marca)cbMarca.SelectedItem;
+
             }
             else
             {
                 // edicao
-                produto.codigo = Int32.Parse(lbCodigo.Content.ToString());
-                produto.nome = txtNome.Text;
-                produto.valorCompra = Convert.ToDecimal(txtValorCompra.Text);
-                produto.valorVenda = Convert.ToDecimal(txtValorVenda.Text);
-                produto.qtdEstoque = Int32.Parse(txtQtdEstoque.Text);
-                produto.qtdMinimaEstoque = Int32.Parse(txtQtdMinimaEstoque.Text);
-                produto.marca = (Marca)cbMarca.SelectedItem;
+
             }         
         }
 

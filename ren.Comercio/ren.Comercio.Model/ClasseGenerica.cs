@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ren.Comercio.Model
 {
-     public class Marca : ClasseGenerica
+    public class ClasseGenerica
     {
-
-        public string nome { get; set; }
+        [Key]
+        public int codigo { get; set; }
     }
 }

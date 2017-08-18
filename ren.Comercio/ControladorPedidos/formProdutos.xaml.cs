@@ -22,13 +22,12 @@ namespace ControladorPedidos
     public partial class formProdutos : Window
     {
 
-        RepositorioPadrao repositorio;
+        RepositorioProduto repositorio;
         
         public formProdutos()
         {   
             InitializeComponent();
-            repositorio = new RepositorioPadrao();
-
+            repositorio = new RepositorioProduto();
         }
 
         private void btMarcas_Click(object sender, RoutedEventArgs e)
@@ -53,7 +52,7 @@ namespace ControladorPedidos
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            CarregarLista();
+           // CarregarLista();
         }
 
         private void btAtualizar_Click(object sender, RoutedEventArgs e)

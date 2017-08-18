@@ -38,7 +38,7 @@ namespace ControladorPedidos
 
         private void btSalvar_Click(object sender, RoutedEventArgs e)
         {
-            RepositorioPadrao repo = new RepositorioPadrao();
+            RepositorioMarca repo = new RepositorioMarca();
 
             try
             {

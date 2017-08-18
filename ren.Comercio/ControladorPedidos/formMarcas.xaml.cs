@@ -22,11 +22,11 @@ namespace ControladorPedidos
     public partial class formMarcas : Window
     {
 
-        RepositorioPadrao repositorio;
+        RepositorioMarca repositorio;
         public formMarcas()
         {
             InitializeComponent();
-            repositorio = new RepositorioPadrao();
+            repositorio = new RepositorioMarca();
         }
 
         private void btEditar_Click(object sender, RoutedEventArgs e)
