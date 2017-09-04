@@ -1,31 +1,30 @@
 ﻿using System;
-using ren.Comercio.Model;
 using System.Windows;
 using ren.Comercio.Repositorio;
+using ren.Comercio.Model;
 
 namespace ControladorPedidos
 {
-
-    public partial class formMarcas : Window
+    public partial class formClientes : Window
     {
+        RepositorioCliente repositorio;
 
-        RepositorioMarca repositorio;
-        public formMarcas()
+        public formClientes()
         {
             InitializeComponent();
-            repositorio = new RepositorioMarca();
+            repositorio = new RepositorioCliente();
         }
 
         private void btEditar_Click(object sender, RoutedEventArgs e)
         {
-            if (listMarca.SelectedItem == null)
+            if (listClientes.SelectedItem == null)
             {
                 MessageBox.Show("Favor selecionar um item para edicao!", "Atencao", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                var marca = (Marca)listMarca.SelectedItem;
-                var formMarca = new formCadastroMarca(marca);
+                var cliente = (Cliente)listClientes.SelectedItem;
+                var formMarca = new formCadastroCliente(cliente);
                 formMarca.ShowDialog();
                 CarregarLista();
             }
@@ -43,13 +42,13 @@ namespace ControladorPedidos
 
         private void CarregarLista()
         {
-            listMarca.DataContext = repositorio.Listar();
+            listClientes.DataContext = repositorio.Listar();
         }
 
         private void btNovo_Click(object sender, RoutedEventArgs e)
         {
-            var formMarca = new formCadastroMarca();
-            formMarca.ShowDialog();
+            var formClientes = new formCadastroCliente();
+            formClientes.ShowDialog();
             CarregarLista();
         }
 
@@ -58,23 +57,24 @@ namespace ControladorPedidos
             try
             {
 
-                if (listMarca.SelectedItem == null)
+                if (listClientes.SelectedItem == null)
                 {
                     MessageBox.Show("Favor selecionar um item para exclusao!", "Atencao", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
 
-                    var marcaSelecionada = (Marca)listMarca.SelectedItem;
+                    var marcaSelecionada = (Cliente)listClientes.SelectedItem;
 
                     if (MessageBox.Show("Tem certeza que deseja excluir " + marcaSelecionada.nome + " ?", "Atencao", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
                     {
                         repositorio.Excluir(marcaSelecionada);
                     }
                 }
-    
+
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show("Nao foi possivel excluir: " + ex.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }

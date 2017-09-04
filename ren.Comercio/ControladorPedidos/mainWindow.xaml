@@ -16,7 +16,7 @@
                               Style="{DynamicResource dn32ButtonStyle}"
                               Text="Clientes"
                               NormalImage="/dn32Layout;component/img/clientes.png"
-                              HorizontalAlignment="Left" VerticalAlignment="Top" Width="230" Margin="10,16,0,0" Background="White"/>
+                              HorizontalAlignment="Left" VerticalAlignment="Top" Width="230" Margin="10,16,0,0" Background="White" Click="btClientes_Click"/>
         <Controls:dn32ImageButton x:Name="btProdutos" 
         	Style="{DynamicResource dn32ButtonStyle}"
         	Text="Produtos"
@@ -32,7 +32,7 @@
         	Style="{DynamicResource dn32ButtonStyle}"
         	Text="Usuarios"
         	NormalImage="/dn32Layout;component/img/usuarios.png"
-        	HorizontalAlignment="Left" VerticalAlignment="Top"  Width="230" Margin="10,167,0,0" Background="White"/>
+        	HorizontalAlignment="Left" VerticalAlignment="Top"  Width="230" Margin="10,167,0,0" Background="White" Click="btUsuarios_Click"/>
         <Controls:dn32ImageButton x:Name="btVendas" 
         	Style="{DynamicResource dn32ButtonStyle}"
         	Text="Vendas"

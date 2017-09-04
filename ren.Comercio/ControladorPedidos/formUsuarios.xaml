@@ -1,4 +1,4 @@
-﻿<Window x:Class="ControladorPedidos.formProdutos"
+﻿<Window x:Class="ControladorPedidos.formUsuarios"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,14 +6,15 @@
         xmlns:local="clr-namespace:ControladorPedidos"
         mc:Ignorable="d"
         xmlns:Controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
-        Loaded="Window_Loaded"
-        Title="Produtos" Height="517.5" Width="903">
+        Title="Usuarios" Height="517.5" Width="903" Loaded="Window_Loaded">
+
 
     <Window.Resources>
         <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
     </Window.Resources>
 
     <Grid>
+
         <Controls:dn32ImageButton x:Name="btNovo" 
                               Style="{DynamicResource dn32ButtonStyle}"
                               Text="Novo"
@@ -21,7 +22,7 @@
                               Padding="3"
                               FontSize="12"
                               NormalImage="/dn32Layout;component/img/Novo.png"
-                              HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="5,5,0,0" Background="White" Height="70" Click="btNovo_Click"/>
+                              HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="5,5,0,0" Background="White" Height="70" Click="btNovo_Click" />
         <Controls:dn32ImageButton x:Name="btEditar" 
         	Style="{DynamicResource dn32ButtonStyle}"
         	Text="Editar"
@@ -29,8 +30,7 @@
         	Padding="3"
         	FontSize="12"
         	NormalImage="/dn32Layout;component/img/Editar.png"
-            Click="btEditar_Click"
-        	HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="88,5,0,0" Background="White" Height="70"/>
+        	HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="88,5,0,0" Background="White" Height="70" Click="btEditar_Click"/>
         <Controls:dn32ImageButton x:Name="btExcluir" 
         	Style="{DynamicResource dn32ButtonStyle}"
         	Text="Excluir"
@@ -47,24 +47,16 @@
         	FontSize="12"
         	NormalImage="/dn32Layout;component/img/Atualizar.png"
         	HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="254,5,0,0" Background="White" Height="70" Click="btAtualizar_Click"/>
-        <Controls:dn32ImageButton x:Name="btMarcas" 
-        	Style="{DynamicResource dn32ButtonStyle}"
-        	Text="Marcas"
-        	ImageSize="40"
-        	Padding="3"
-        	FontSize="12"
-        	NormalImage="/dn32Layout;component/img/marca.png" Click="btMarcas_Click"
-        	HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="648,5,0,0" Background="White" Height="70"/>
-        <ListView x:Name="listProdutos" SelectionMode="Single" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="397" Margin="5,80,0,0" VerticalAlignment="Top" Width="880" >
+        <ListView x:Name="listUsuarios" SelectionMode="Single" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="397" Margin="5,80,0,0" VerticalAlignment="Top" Width="880" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Codigo" Width="75" DisplayMemberBinding="{Binding codigo}" />
+                    <GridViewColumn Header="Codigo" Width="80" DisplayMemberBinding="{Binding codigo}" />
                     <GridViewColumn Header="Nome" Width="300" DisplayMemberBinding="{Binding nome}" />
-                    <GridViewColumn Header="Marca" Width="100" DisplayMemberBinding="{Binding marca.nome}" />
-                    <GridViewColumn Header="Valor de Compra" Width="100" DisplayMemberBinding="{Binding valorCompra}" />
-                    <GridViewColumn Header="Valor de Venda" Width="100" DisplayMemberBinding="{Binding valorVenda}" />
-                    <GridViewColumn Header="Em Estoque" Width="100" DisplayMemberBinding="{Binding qtdEstoque}" />
-                    <GridViewColumn Header="Estoque Minimo" Width="100" DisplayMemberBinding="{Binding qtdMinimaEstoque}" />
+                    <GridViewColumn Header="Administrador" Width="100" DisplayMemberBinding="{Binding administrador}" />
+                    <GridViewColumn Header="Clientes" Width="100" DisplayMemberBinding="{Binding clientes}" />
+                    <GridViewColumn Header="Vendas" Width="100" DisplayMemberBinding="{Binding vendas}" />
+                    <GridViewColumn Header="Fornecedores" Width="100" DisplayMemberBinding="{Binding fornecedores}" />
+                    <GridViewColumn Header="Compras" Width="100" DisplayMemberBinding="{Binding compras}" />
                 </GridView>
             </ListView.View>
         </ListView>

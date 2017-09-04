@@ -57,6 +57,7 @@ namespace ControladorPedidos
 
         private void btAtualizar_Click(object sender, RoutedEventArgs e)
         {
+            CarregarLista();
         }
 
         private void CarregarLista()
@@ -84,6 +85,8 @@ namespace ControladorPedidos
                     repositorio.Excluir(produto);
                 }
             }
+
+            CarregarLista();
         }
     }
 }

@@ -30,5 +30,17 @@ namespace ControladorPedidos
             var formProduto = new formProdutos();
             formProduto.Show();
         }
+
+        private void btClientes_Click(object sender, RoutedEventArgs e)
+        {
+            var formClientes = new formClientes();
+            formClientes.ShowDialog();
+        }
+
+        private void btUsuarios_Click(object sender, RoutedEventArgs e)
+        {
+            var formUsuarios = new formUsuarios();
+            formUsuarios.ShowDialog();
+        }
     }
 }

@@ -2,8 +2,7 @@
 
 namespace ren.Comercio.Repositorio
 {
-    public class RepositorioMarca : RepositorioGenerico<Marca>
+    public class RepositorioCliente : RepositorioGenerico<Cliente>
     {
-
     }
 }

@@ -19,6 +19,6 @@ namespace ren.Comercio.Model
 
         public int qtdMinimaEstoque { get; set; }
 
-        public Marca marca { get; set; }
+        public virtual Marca marca { get; set; }
     }
 }

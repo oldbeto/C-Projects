@@ -9,14 +9,14 @@ namespace ren.Comercio.Repositorio
 {
     public abstract class RepositorioGenerico<T> where T : ClasseGenerica
     {
-        Contexto contexto;
+       protected Contexto contexto;
 
         public RepositorioGenerico()
         {
             contexto = new Contexto();
         }
 
-        public void Adicionar(T objeto)
+        public virtual void Adicionar(T objeto)
         {
             contexto.Set<T>().Add(objeto);
             contexto.SaveChanges();
@@ -33,7 +33,6 @@ namespace ren.Comercio.Repositorio
         {
             var origem = contexto.Set<T>().Find(objeto.codigo);
             contexto.Set<T>().Remove(origem);
-
             contexto.SaveChanges();
         }
 

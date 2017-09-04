@@ -69,6 +69,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="formCadastroCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="formCadastroMarca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -77,7 +81,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="formCadastroUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="formClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="formMarcas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="formUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,14 +105,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="formCadastroCliente.xaml.cs">
+      <DependentUpon>formCadastroCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="formCadastroMarca.xaml.cs">
       <DependentUpon>formCadastroMarca.xaml</DependentUpon>
     </Compile>
     <Compile Include="formCadastroProdutos.xaml.cs">
       <DependentUpon>formCadastroProdutos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="formCadastroUsuarios.xaml.cs">
+      <DependentUpon>formCadastroUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="formClientes.xaml.cs">
+      <DependentUpon>formClientes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="formMarcas.xaml.cs">
       <DependentUpon>formMarcas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="formUsuarios.xaml.cs">
+      <DependentUpon>formUsuarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="mainWindow.xaml.cs">
       <DependentUpon>mainWindow.xaml</DependentUpon>

@@ -17,7 +17,7 @@
         <TextBox x:Name="txtValorCompra" HorizontalAlignment="Left" Height="24" Margin="216,83,0,0" TextWrapping="Wrap" Text="{Binding valorCompra }" VerticalAlignment="Top" Width="274"/>
         <TextBox x:Name="txtValorVenda" HorizontalAlignment="Left" Height="24" Margin="216,112,0,0" TextWrapping="Wrap" Text="{Binding valorVenda }" VerticalAlignment="Top" Width="274"/>
         <TextBox x:Name="txtQtdEstoque" HorizontalAlignment="Left" Height="24" Margin="216,141,0,0" TextWrapping="Wrap" Text="{Binding qtdEstoque }" VerticalAlignment="Top" Width="274"/>
-        <ComboBox x:Name="cbMarca" HorizontalAlignment="Left" Margin="216,201,0,0" VerticalAlignment="Top" Width="274" ItemsSource="{Binding}" DisplayMemberPath="nome"/>
+        <ComboBox x:Name="cbMarca" HorizontalAlignment="Left" Margin="216,201,0,0" VerticalAlignment="Top" Width="274" ItemsSource="{Binding}" SelectedValuePath="codigo" DisplayMemberPath="nome"/>
         <Label x:Name="label" Content="Quantidade em Estoque" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,141,0,0" RenderTransformOrigin="0.441,-0.616"/>
         <Label x:Name="label1" Content="Quantidade Minima em Estoque:" HorizontalAlignment="Left" Margin="27,170,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy" Content="Valor de Venda:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,110,0,0" RenderTransformOrigin="0.441,-0.616"/>
@@ -35,7 +35,7 @@
         	NormalImage="/dn32Layout;component/img/Salvar.png"
         	HorizontalAlignment="Left" Width="87" Margin="231,258,0,0" Background="White" Click="btSalvar_Click" Height="82" VerticalAlignment="Top"/>
         <Label x:Name="label2_Copy" Content="Codigo:" HorizontalAlignment="Left" Margin="160,19,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbCodigo" HorizontalAlignment="Left" Margin="231,19,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbCodigo" HorizontalAlignment="Left" Margin="216,19,0,0" Content ="{Binding codigo }" VerticalAlignment="Top" Height="26" Width="274"/>
 
     </Grid>
 </Window>
