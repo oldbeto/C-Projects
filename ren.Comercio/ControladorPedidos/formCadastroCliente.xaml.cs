@@ -35,7 +35,7 @@ namespace ControladorPedidos
             if ((lbCodigo.Content == null) || (lbCodigo.Content.ToString() == "0"))
             {
                 // novo
-                try
+                
                 {
                     repoCliente.Adicionar(cliente);
                     MessageBox.Show("Adicionado com Sucesso!", "Sucesso !", MessageBoxButton.OK, MessageBoxImage.Information);
