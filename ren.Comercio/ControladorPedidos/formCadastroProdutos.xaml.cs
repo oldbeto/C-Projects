@@ -37,7 +37,7 @@ namespace ControladorPedidos
             var produto = (Produto)this.DataContext;
             produto.marca = (Marca)cbMarca.SelectedItem;
 
-            if(lbCodigo.Content == null)
+            if(lbCodigo.Content == null || lbCodigo.Content.ToString() == "0")
             {
                 // novo
                 try

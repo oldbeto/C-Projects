@@ -13,12 +13,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ren.Comercio.Repositorio;
+using System.Globalization;
 
 namespace ControladorPedidos
 {
-    /// <summary>
-    /// Interaction logic for Produtos.xaml
-    /// </summary>
+
+    public class ConversorDeEstoque : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var produto = value as Produto;
+            if(produto.qtdEstoque < produto.qtdMinimaEstoque)
+            {
+                return new SolidColorBrush(Colors.Red);
+            }
+            else
+            {
+                return new SolidColorBrush(Colors.Black);
+            }
+
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     public partial class formProdutos : Window
     {
 

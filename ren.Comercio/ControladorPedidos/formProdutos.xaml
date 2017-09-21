@@ -7,10 +7,16 @@
         mc:Ignorable="d"
         xmlns:Controls="clr-namespace:dn32ImageButton.Controls;assembly=dn32Layout"
         Loaded="Window_Loaded"
-        Title="Produtos" Height="517.5" Width="903">
+        Title="Produtos" Height="517.5" Width="903"
+        xmlns:app="clr-namespace:ControladorPedidos">
 
     <Window.Resources>
-        <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/dn32Layout;component/Themes/dn32ImageButton.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <app:ConversorDeEstoque x:Key="ConversorDeEstoque"/>
+        </ResourceDictionary>
     </Window.Resources>
 
     <Grid>
@@ -64,7 +70,13 @@
                     <GridViewColumn Header="Valor de Compra" Width="100" DisplayMemberBinding="{Binding valorCompra}" />
                     <GridViewColumn Header="Valor de Venda" Width="100" DisplayMemberBinding="{Binding valorVenda}" />
                     <GridViewColumn Header="Em Estoque" Width="100" DisplayMemberBinding="{Binding qtdEstoque}" />
-                    <GridViewColumn Header="Estoque Minimo" Width="100" DisplayMemberBinding="{Binding qtdMinimaEstoque}" />
+                    <GridViewColumn Header="Estoque Minimo" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding qtdMinimaEstoque}" Foreground="{Binding Path=., Converter={StaticResource ConversorDeEstoque}}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
