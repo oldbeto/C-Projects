@@ -73,6 +73,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="formCadastroCompra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="formCadastroMarca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="formClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="formCompras.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,6 +116,9 @@
     <Compile Include="formCadastroCliente.xaml.cs">
       <DependentUpon>formCadastroCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="formCadastroCompra.xaml.cs">
+      <DependentUpon>formCadastroCompra.xaml</DependentUpon>
+    </Compile>
     <Compile Include="formCadastroMarca.xaml.cs">
       <DependentUpon>formCadastroMarca.xaml</DependentUpon>
     </Compile>
@@ -119,6 +130,9 @@
     </Compile>
     <Compile Include="formClientes.xaml.cs">
       <DependentUpon>formClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="formCompras.xaml.cs">
+      <DependentUpon>formCompras.xaml</DependentUpon>
     </Compile>
     <Compile Include="formMarcas.xaml.cs">
       <DependentUpon>formMarcas.xaml</DependentUpon>

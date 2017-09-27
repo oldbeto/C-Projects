@@ -61,6 +61,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioCliente.cs" />
+    <Compile Include="RepositorioCompra.cs" />
     <Compile Include="RepositorioGenerico.cs" />
     <Compile Include="RepositorioMarca.cs" />
     <Compile Include="RepositorioProduto.cs" />
